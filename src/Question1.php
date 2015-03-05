@@ -12,6 +12,20 @@ class Question1 {
 		}
 	}
 
+	public function &sort() {
+		$arr = $this->arr;
+
+		$locked = array();
+		$times = count($arr);
+
+		for($i = 0; $i < $times; $i++) {		
+			$arr = array_reverse($arr);
+			$locked[] = array_shift($arr);
+		}
+
+		return $locked;
+	}
+
 	public function __get($name) {
 		return $this->$name;
 	}

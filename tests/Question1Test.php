@@ -2,9 +2,9 @@
 class Question1Test extends PHPUnit_Framework_TestCase {
 	public function testShouldPopulate() {
 		$question = new Question1();
-		$this->assertEquals(count($question->arr), 0);
+		$this->assertEquals(0, count($question->arr));
 		$question->populate(5);
-		$this->assertEquals(count($question->arr), 5);
+		$this->assertEquals(5, count($question->arr));
 	}
 
 	public function testShouldPopulateAscending() {
@@ -12,10 +12,32 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 		$question->populate(5);
 
 		$arr = $question->arr;
-		$this->assertEquals($arr[0], 1);
-		$this->assertEquals($arr[1], 2);
-		$this->assertEquals($arr[2], 3);
-		$this->assertEquals($arr[3], 4);
-		$this->assertEquals($arr[4], 5);
+		$this->assertEquals(1, $arr[0]);
+		$this->assertEquals(2, $arr[1]);
+		$this->assertEquals(3, $arr[2]);
+		$this->assertEquals(4, $arr[3]);
+		$this->assertEquals(5, $arr[4]);
+	}
+
+	public function testShouldSortSameLength() {
+		$question = new Question1();
+		$question->populate(5);
+
+		$sorted = $question->sort();
+
+		$this->assertEquals(5, count($sorted));
+	}
+
+	public function testShouldSort() {
+		$question = new Question1();
+		$question->populate(5);
+
+		$sorted = $question->sort();
+
+		$this->assertEquals(5, $sorted[0]);
+		$this->assertEquals(1, $sorted[1]);
+		$this->assertEquals(4, $sorted[2]);
+		$this->assertEquals(2, $sorted[3]);
+		$this->assertEquals(3, $sorted[4]);
 	}
 }

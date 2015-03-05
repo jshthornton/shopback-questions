@@ -51,12 +51,16 @@ class Question1 {
 	}
 
 	public function predictiveIndexOf($needle, $n) {
+		if($needle >= $n) {
+			throw new BadMethodCallException('Needle must be less than the number');
+		}
+
 		$partition_end = floor($n / 2);
 
-		if($needle <= $partition_end) {
+		if($needle < $partition_end) {
 			return ($needle * 2) + 1;
 		} else {
-			return ($n - $needle) * 2;
+			return (($n - 1) - $needle) * 2;
 		}
 	}
 

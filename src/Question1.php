@@ -15,15 +15,19 @@ class Question1 {
 	public function &sort() {
 		$arr = $this->arr;
 
-		$locked = array();
+		$sorted = array();
 		$times = count($arr);
 
-		for($i = 0; $i < $times; $i++) {		
+		for($i = 0; $i < $times; $i++) {
 			$arr = array_reverse($arr);
-			$locked[] = array_shift($arr);
+			$sorted[] = array_shift($arr);
+		}
+
+		return $sorted;
 		}
 
 		return $locked;
+		return $sorted;
 	}
 
 	public function __get($name) {

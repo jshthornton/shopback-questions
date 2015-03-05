@@ -24,9 +24,25 @@ class Question1 {
 		}
 
 		return $sorted;
+	}
+
+	public function &sortFast() {
+		$arr = $this->arr;
+
+		$sorted = array();
+		$times = count($arr);
+		$position = 'end';
+
+		for($i = 0; $i < $times; $i++) {
+			if($position === 'end') {
+				$sorted[] = array_pop($arr);
+				$position = 'start';
+			} else if($position === 'start') {
+				$sorted[] = array_shift($arr);
+				$position = 'end';
+			}
 		}
 
-		return $locked;
 		return $sorted;
 	}
 

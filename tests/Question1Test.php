@@ -40,4 +40,26 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(2, $sorted[3]);
 		$this->assertEquals(3, $sorted[4]);
 	}
+
+	public function testShouldSortFastSameLength() {
+		$question = new Question1();
+		$question->populate(5);
+
+		$sorted = $question->sortFast();
+
+		$this->assertEquals(5, count($sorted));
+	}
+
+	public function testShouldSortFast() {
+		$question = new Question1();
+		$question->populate(5);
+
+		$sorted = $question->sortFast();
+
+		$this->assertEquals(5, $sorted[0]);
+		$this->assertEquals(1, $sorted[1]);
+		$this->assertEquals(4, $sorted[2]);
+		$this->assertEquals(2, $sorted[3]);
+		$this->assertEquals(3, $sorted[4]);
+	}
 }

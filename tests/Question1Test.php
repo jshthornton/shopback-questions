@@ -62,4 +62,13 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(2, $sorted[3]);
 		$this->assertEquals(3, $sorted[4]);
 	}
+
+	public function testIndexOf() {
+		$question = new Question1();
+		$question->populate(5);
+
+		$sorted = $question->sortFast();
+
+		$this->assertEquals(0, $question->indexOf(5, $sorted));
+	}
 }

@@ -46,6 +46,10 @@ class Question1 {
 		return $sorted;
 	}
 
+	public function indexOf($needle, &$haystack) {
+		return array_search($needle, $haystack, true);
+	}
+
 	public function __get($name) {
 		return $this->$name;
 	}

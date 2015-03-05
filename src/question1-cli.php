@@ -30,6 +30,7 @@ if ($handle) {
 
 	fclose($handle);
 } else {
+	throw new Exception('Unable to open file ' . $argv[1]);
 }
 
 ?>

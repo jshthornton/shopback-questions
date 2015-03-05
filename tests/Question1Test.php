@@ -71,4 +71,17 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 
 		$this->assertEquals(0, $question->indexOf(5, $sorted));
 	}
+
+	public function testPredictiveIndexOf() {
+		$question = new Question1();
+
+		$index = $question->predictiveIndexOf(5, 5);
+		$this->assertEquals(0, $index);
+
+		$index = $question->predictiveIndexOf(6, 6);
+		$this->assertEquals(0, $index);
+
+		$index = $question->predictiveIndexOf(1, 6);
+		$this->assertEquals(1, $index);
+	}
 }

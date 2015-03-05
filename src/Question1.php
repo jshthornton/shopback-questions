@@ -50,6 +50,16 @@ class Question1 {
 		return array_search($needle, $haystack, true);
 	}
 
+	public function predictiveIndexOf($needle, $n) {
+		$partition_end = floor($n / 2);
+
+		if($needle <= $partition_end) {
+			return ($needle * 2) - 1;
+		} else {
+			return ($n - $needle) * 2;
+		}
+	}
+
 	public function __get($name) {
 		return $this->$name;
 	}

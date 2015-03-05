@@ -7,7 +7,7 @@ class Question1 {
 		unset($this->arr);
 		$this->arr = array();
 
-		for($i = 1; $i <= $n; $i++) {
+		for($i = 0; $i < $n; $i++) {
 			$this->arr[] = $i;
 		}
 	}
@@ -54,7 +54,7 @@ class Question1 {
 		$partition_end = floor($n / 2);
 
 		if($needle <= $partition_end) {
-			return ($needle * 2) - 1;
+			return ($needle * 2) + 1;
 		} else {
 			return ($n - $needle) * 2;
 		}

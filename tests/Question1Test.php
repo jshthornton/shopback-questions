@@ -12,11 +12,11 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 		$question->populate(5);
 
 		$arr = $question->arr;
-		$this->assertEquals(1, $arr[0]);
-		$this->assertEquals(2, $arr[1]);
-		$this->assertEquals(3, $arr[2]);
-		$this->assertEquals(4, $arr[3]);
-		$this->assertEquals(5, $arr[4]);
+		$this->assertEquals(0, $arr[0]);
+		$this->assertEquals(1, $arr[1]);
+		$this->assertEquals(2, $arr[2]);
+		$this->assertEquals(3, $arr[3]);
+		$this->assertEquals(4, $arr[4]);
 	}
 
 	public function testShouldSortSameLength() {
@@ -34,11 +34,11 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 
 		$sorted = $question->sort();
 
-		$this->assertEquals(5, $sorted[0]);
-		$this->assertEquals(1, $sorted[1]);
-		$this->assertEquals(4, $sorted[2]);
-		$this->assertEquals(2, $sorted[3]);
-		$this->assertEquals(3, $sorted[4]);
+		$this->assertEquals(4, $sorted[0]);
+		$this->assertEquals(0, $sorted[1]);
+		$this->assertEquals(3, $sorted[2]);
+		$this->assertEquals(1, $sorted[3]);
+		$this->assertEquals(2, $sorted[4]);
 	}
 
 	public function testShouldSortFastSameLength() {
@@ -56,11 +56,11 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 
 		$sorted = $question->sortFast();
 
-		$this->assertEquals(5, $sorted[0]);
-		$this->assertEquals(1, $sorted[1]);
-		$this->assertEquals(4, $sorted[2]);
-		$this->assertEquals(2, $sorted[3]);
-		$this->assertEquals(3, $sorted[4]);
+		$this->assertEquals(4, $sorted[0]);
+		$this->assertEquals(0, $sorted[1]);
+		$this->assertEquals(3, $sorted[2]);
+		$this->assertEquals(1, $sorted[3]);
+		$this->assertEquals(2, $sorted[4]);
 	}
 
 	public function testIndexOf() {
@@ -82,6 +82,6 @@ class Question1Test extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(0, $index);
 
 		$index = $question->predictiveIndexOf(1, 6);
-		$this->assertEquals(1, $index);
+		$this->assertEquals(3, $index);
 	}
 }
